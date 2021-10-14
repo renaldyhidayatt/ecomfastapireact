@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
-from product.schema import ProductSchema
+from dto.productschema import ProductSchema
 from config.database import get_db
 
 from .productservice import ProductService

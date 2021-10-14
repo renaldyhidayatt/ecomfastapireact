@@ -2,7 +2,7 @@ from fastapi import APIRouter, Depends
 from sqlalchemy.orm.session import Session
 
 from config.database import get_db
-from .schema import OrderCreatePlaceOrder
+from dto.orderschema import OrderCreatePlaceOrder
 from .orderservice import OrderService
 
 router = APIRouter(prefix="/order", tags=["Order"])

@@ -3,7 +3,7 @@ from sqlalchemy.orm import relationship
 from sqlalchemy.sql.schema import ForeignKey
 from config.database import Base
 from datetime import datetime
-from review.models import ReviewModel
+from .reviewmodels import ReviewModel
 
 
 # {

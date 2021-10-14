@@ -1,9 +1,9 @@
 from fastapi import Depends
 from config.database import get_db
 
-from .models import User
+from models.usermodels import User
 from sqlalchemy.orm import Session
-from .schema import RegisterUser
+from dto.userschema import RegisterUser
 from config.hashing import Hashing
 
 

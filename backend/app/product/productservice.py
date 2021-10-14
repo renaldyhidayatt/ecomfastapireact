@@ -1,8 +1,8 @@
 from fastapi import Depends, HTTPException, status
 from sqlalchemy.orm.session import Session
 from config.database import get_db
-from .models import ProductModel, ReviewModel
-from .schema import ProductSchema
+from models.productmodels import ProductModel, ReviewModel
+from dto.productschema import ProductSchema
 from config.hashing import Hashing
 
 

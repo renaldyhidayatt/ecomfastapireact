@@ -1,8 +1,8 @@
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 from config.database import get_db
-from users.models import User
-from .schema import ReviewCreate
+from models.usermodels import User
+from dto.reviewschema import ReviewCreate
 from config.token import get_currentUser
 from .reviewservice import ReviewService
 

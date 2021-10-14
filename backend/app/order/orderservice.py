@@ -1,8 +1,8 @@
 import stripe
 from sqlalchemy.orm import Session
 from fastapi import Depends
-from .schema import OrderCreatePlaceOrder
-from .models import OrderModel, OrderItemsModel, ShippingAddressModel
+from dto.orderschema import OrderCreatePlaceOrder
+from models.ordermodels import OrderModel, OrderItemsModel, ShippingAddressModel
 
 # from uuid import uuid4
 
