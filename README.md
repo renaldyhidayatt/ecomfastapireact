@@ -6,6 +6,30 @@ This is a simple project with Fastapi, sqlalchemy, react, redux, and Postgresql
 
 ## How to use My Project
 
+<ul>
+    <li>
+        Install Python
+    </li>
+    <li>
+        Install postgresql
+    </li>
+    <li>
+        Install Pipenv pip install pipenv
+    </li>
+    <li>
+        Install Npm and Nodejs
+    </li>
+    <li>
+        git Clone my project https://github.com/renaldyhidayatt/ecomfastapireact
+    </li>
+    <li>
+        directory project backend and pipenv install
+    </li>
+    <li>
+        directory project frontend and npm install
+    </li>
+</ul>
+
 ## Demo
 
 Home
