@@ -1,3 +1,4 @@
+import os
 import stripe
 from sqlalchemy.orm import Session
 from fastapi import Depends
@@ -6,7 +7,8 @@ from models.ordermodels import OrderModel, OrderItemsModel, ShippingAddressModel
 
 # from uuid import uuid4
 
-stripe.api_key = "sk_test_EsKLdCdQNr740JBf126oe9lt00JC8kOYeI"
+
+stripe.api_key = os.environ("STRIPE_KEY")
 
 
 class OrderService:
