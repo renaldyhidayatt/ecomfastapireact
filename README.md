@@ -4,6 +4,10 @@ This is a simple project with Fastapi, sqlalchemy, react, redux, and Postgresql
 
 ## Routes Implement
 
+url: http://localhost:8000/docs
+
+<img src="./images/images8.png" alt="product"/>
+
 ## How to use My Project
 
 <ul>
@@ -27,6 +31,12 @@ This is a simple project with Fastapi, sqlalchemy, react, redux, and Postgresql
     </li>
     <li>
         directory project frontend and npm install
+    </li>
+    <li>
+        running project backend/app uvicorn main:app --reload
+    </li>
+    <li>
+        running project frontend npm start
     </li>
 </ul>
 
