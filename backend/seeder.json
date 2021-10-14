@@ -1,0 +1,24 @@
+[
+  {
+    "category": "electronic",
+    "id": 1,
+    "price": 300,
+    "rating": 5,
+    "image": "https://rukminim1.flixcart.com/image/416/416/khp664w0-0/headphone/p/d/k/zeb-yoga-101-zebronics-original-imafxnkdwzt4gzhg.jpeg?q=70",
+    "name": "ZEBRONICS Zeb-Yoga 101 Bluetooth Headset  (Red, In the Ear)",
+    "description": "Electronic",
+    "countInStock": 30,
+    "review_id": null
+  },
+  {
+    "category": "electronic",
+    "id": 2,
+    "price": 300,
+    "rating": 5,
+    "image": "https://images.samsung.com/is/image/samsung/in-galaxy-m51-m515fz-8gb-sm-m515fzbeins--304622793?$684_547_PNG$",
+    "name": "Samsung Galaxy M51 (Electric Blue, 6GB RAM, 128GB Storage)",
+    "description": "Electronic",
+    "countInStock": 30
+  },
+  {}
+]

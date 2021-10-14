@@ -1,0 +1,94 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.navbar {
+  background-color: rgb(1, 1, 51) !important;
+}
+
+.nav-link {
+  color: white !important;
+}
+.navbar-brand {
+  color: white !important;
+}
+
+h1 {
+  font-size: 16px !important;
+  text-align: left !important;
+  color: black !important;
+}
+
+.img-fluid {
+  height: 200px !important;
+  text-align: center !important;
+}
+
+.bigimg {
+  height: 400px !important;
+}
+p {
+  text-align: left !important;
+}
+
+h2 {
+  font-size: 25px !important;
+  font-weight: bold !important;
+}
+.btn {
+  background-color: black !important;
+  color: white !important;
+  width: 200px !important;
+}
+
+input {
+  box-shadow: none !important;
+  margin-top: 10px !important;
+  border: 1px solid black !important;
+}
+h3 {
+  font-size: 16px !important;
+}
+.orderitem h1 {
+  font-size: 16px !important;
+}
+
+.admin {
+  margin-top: 10px;
+  background-color: rgb(0, 6, 61) !important;
+}
+.admin li {
+  color: white !important;
+  list-style-type: none !important;
+  display: inline !important;
+  margin-left: 20px !important;
+}
+
+.admin li a {
+  color: white !important;
+}
+
+.dropdown-toggle {
+  background-color: rgb(1, 1, 51) !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+select {
+  box-shadow: none !important;
+  border: 1px solid black !important;
+}
+th,
+td {
+  text-align: left !important;
+}
