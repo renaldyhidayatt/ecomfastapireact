@@ -1,3 +1,5 @@
+import uvicorn
+
 from fastapi import FastAPI
 from config.database import engine
 from config.database import Base
@@ -36,3 +38,7 @@ app.include_router(usersrouter.router)
 app.include_router(reviewrouter.router)
 app.include_router(productrouter.router)
 app.include_router(orderrouter.router)
+
+
+if __name__ == "__main__":
+    uvicorn.run("main:app", reload=True)
