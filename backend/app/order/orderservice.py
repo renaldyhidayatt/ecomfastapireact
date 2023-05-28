@@ -8,7 +8,8 @@ from models.ordermodels import OrderModel, OrderItemsModel, ShippingAddressModel
 # from uuid import uuid4
 
 
-stripe.api_key = os.environ("STRIPE_KEY")
+stripe.api_key = os.environ.get("STRIPE_KEY")
+
 
 
 class OrderService:
