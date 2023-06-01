@@ -25,7 +25,8 @@ export default function Product({ product }) {
             value={product.rating}
             readOnly={true}
             itemStyles={myStyles}
-            style={{ fontSize: '14px' }}
+            className="text-sm"
+            style={{ fontSize: '14px', maxWidth: "200" }}
           />
 
           <h1 className="text-lg font-semibold">Price: {product.price}</h1>

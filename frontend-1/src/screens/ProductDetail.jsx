@@ -42,58 +42,61 @@ export default function ProductDetails() {
   }
 
   return (
-    <div className="flex flex-row">
+    <div className="max-w-screen-xl mx-auto mt-10">
       {product && (
         <>
-          <div className="w-full md:w-6/12 mt-8">
-            <div className="bg-white shadow p-2 m-2 rounded">
-              <h1>{product.name}</h1>
-              <div className="flex justify-center">
+          <div className="">
+            <div className="flex flex-col md:flex-row">
+              <div className="md:w-1/2">
                 <img
                   src={product.image}
-                  alt={product.name}
-                  className="img-fluid m-3 max-w-full"
+                  alt={product.title}
+                  className="w-full h-auto"
                 />
               </div>
-              <p>{product.description}</p>
-            </div>
-          </div>
-          <div className="w-full md:w-6/12">
-            <div className="m-2">
-              <h1>Price: {product.price}</h1>
-              <hr />
-              <h1>Selected Quantity</h1>
-              <input
-                type="number"
-                value={quantity}
-                onChange={(e) => setQuantity(parseInt(e.target.value))}
-                className="border border-gray-300 p-2 rounded-md"
-                min={1}
-                max={product.countInStock}
-              />
+              <div className="md:w-1/2 md:pl-8 mt-4 md:mt-0">
+                <h1 className="text-xl xl:text-2xl font-medium mb-1">
+                  {product.title}
+                </h1>
 
-              <hr />
-              {product.countInStock > 0 ? (
-                <button
-                  className="bg-gray-800 text-white py-2 px-4 rounded-md"
-                  onClick={addCart}
-                >
-                  Add to Cart
-                </button>
-              ) : (
-                <div>
-                  <h1>Out Of Stock</h1>
-                  <button
-                    className="bg-gray-300 text-gray-500 py-2 px-4 rounded-md cursor-not-allowed"
-                    disabled
+                <p>{product.description}</p>
+                <div className="m-2">
+                  <h1>Price: {product.price}</h1>
+                  <hr />
+                  <h1>Selected Quantity</h1>
+                  <select
+                    value={quantity}
+                    onChange={(e) => setQuantity(e.target.value)}
                   >
-                    Add to Cart
-                  </button>
+                    {[...Array(product.countInStock).keys()].map((x, i) => {
+                      return <option value={i + 1}>{i + 1}</option>;
+                    })}
+                  </select>
+
+                  <hr />
+                  {product.countInStock > 0 ? (
+                    <button
+                      className="bg-gray-800 text-white py-2 px-4 rounded-md mt-6"
+                      onClick={addCart}
+                    >
+                      Add to Cart
+                    </button>
+                  ) : (
+                    <div>
+                      <h1>Out Of Stock</h1>
+                      <button
+                        className="bg-gray-300 text-gray-500 py-2 px-4 rounded-md cursor-not-allowed"
+                        disabled
+                      >
+                        Add to Cart
+                      </button>
+                    </div>
+                  )}
                 </div>
-              )}
+                <hr />
+                <Review product={product} />
+              </div>
             </div>
-            <hr />
-            <Review product={product} />
           </div>
         </>
       )}
