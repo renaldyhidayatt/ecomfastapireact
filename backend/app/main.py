@@ -1,5 +1,7 @@
 import uvicorn
 
+
+
 from fastapi import FastAPI
 from config.database import engine
 from config.database import Base
@@ -13,6 +15,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 
 app = FastAPI()
+
 
 origins = ["*"]
 
@@ -33,11 +36,11 @@ def hello():
     return "Hello"
 
 
-app.include_router(authrouter.router)
-app.include_router(usersrouter.router)
-app.include_router(reviewrouter.router)
-app.include_router(productrouter.router)
-app.include_router(orderrouter.router)
+app.include_router(authrouter.router, prefix="/api")
+app.include_router(usersrouter.router, prefix="/api")
+app.include_router(reviewrouter.router, prefix="/api")
+app.include_router(productrouter.router, prefix="/api")
+app.include_router(orderrouter.router, prefix="/api")
 
 
 if __name__ == "__main__":
