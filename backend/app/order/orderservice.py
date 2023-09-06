@@ -36,12 +36,12 @@ class OrderService:
                 email=request.currentUser.email,
                 orderAmount=request.subtotal,
             )
+            db.add(order_create)
+            db.commit()
 
-            db_orderid = (
-                db.query(OrderModel)
-                .filter(OrderModel.user_id == request.currentUser.id)
-                .first()
-            )
+            db_orderid = db.query(OrderModel).filter(OrderModel.user_id == request.currentUser.id).first()
+            
+            
 
             shipping_a = ShippingAddressModel(
                 address=request.token.card.address_line1,
@@ -61,7 +61,6 @@ class OrderService:
 
             db.add(order_item_a)
             db.add(shipping_a)
-            db.add(order_create)
             db.commit()
         else:
             print("Salah")

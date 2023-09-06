@@ -10,6 +10,7 @@ router = APIRouter(prefix="/product", tags=["Products"])
 
 @router.get("/")
 def getallProduct(db: Session = Depends(get_db)):
+
     return ProductService.get_all_product(db=db)
 
 

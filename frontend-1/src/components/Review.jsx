@@ -41,6 +41,7 @@ export default function Review({ product }) {
 
       <Rating
         className="text-orange"
+        style={{ maxWidth: 250 }}
         value={rating}
         initialRating={rating}
         onChange={setRating}

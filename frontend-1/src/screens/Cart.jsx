@@ -1,11 +1,9 @@
 import { useDispatch, useSelector } from 'react-redux';
 import {
-  addItemToCart,
   removeFromCart,
   updateCartQuantity,
 } from '../redux/cart.slice';
 import Checkout from '../components/Checkout';
-import { useEffect } from 'react';
 
 export default function CartScreen() {
   const cartreducerstate = useSelector((state) => state.cartReducer);

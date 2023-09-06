@@ -12,6 +12,7 @@ __pycache__/
 *.so
 
 # Distribution / packaging
+recommendation_system
 .Python
 build/
 develop-eggs/

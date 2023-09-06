@@ -27,7 +27,7 @@ export default function OrderScreen() {
       <div className="flex justify-center mt-5">
         <div className="w-3/4">
           <h2 className="text-2xl font-semibold">MY ORDERS</h2>
-          <table className="table table-striped table-responsive-sm">
+          <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
             <thead>
               <tr>
                 <th>Order ID</th>
