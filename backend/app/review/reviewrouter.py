@@ -21,6 +21,8 @@ def createReview(
     db: Session = Depends(get_db),
     current_user: User = Depends(get_currentUser),
 ):
+    print(request)
+    print(productid)
     return ReviewService.create_review(
         request=request, productId=productid, db=db, current_user=current_user
     )

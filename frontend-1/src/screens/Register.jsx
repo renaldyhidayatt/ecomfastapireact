@@ -27,7 +27,7 @@ export default function RegisterScreen() {
       email: email,
       password: password,
       is_staff: false,
-      is_actice: true
+      is_active: true
     };
 
     if (password === cpassword) {

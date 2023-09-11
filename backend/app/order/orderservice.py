@@ -2,10 +2,11 @@ import os
 import stripe
 from sqlalchemy.orm import Session
 from fastapi import Depends
+from fastapi.encoders import jsonable_encoder
 from dto.orderschema import OrderCreatePlaceOrder
 from models.ordermodels import OrderModel, OrderItemsModel, ShippingAddressModel
 
-# from uuid import uuid4
+from uuid import uuid4
 
 
 stripe.api_key = os.environ.get("STRIPE_KEY")
@@ -14,7 +15,34 @@ stripe.api_key = os.environ.get("STRIPE_KEY")
 
 class OrderService:
     def getAll(db: Session):
-        return db.query(OrderModel).all()
+        orders_with_items = (
+            db.query(OrderModel, OrderItemsModel)
+            .join(OrderItemsModel, OrderModel.id == OrderItemsModel.order_id)
+            .all()
+        )
+        result = []
+        for order, order_item in orders_with_items:
+            order_data = {
+                "id": order.id,
+                "name": order.name,
+                "email": order.email,
+                "orderAmount": order.orderAmount,
+                "transactionId": order.transactionId,
+                "isDelivered": order.isDelivered,
+                "user_id": order.user_id,
+                "created_at": order.created_at,
+                "updated_at": order.updated_at,
+                "order_items": {
+                    "id": order_item.id,
+                    "name": order_item.name,
+                    "quantity": order_item.quantity,
+                    "price": order_item.price,
+                }
+            }
+            result.append(order_data)
+    
+   
+        return jsonable_encoder(result)
 
     def createOrderPlace(request: OrderCreatePlaceOrder, db: Session):
 
@@ -35,6 +63,7 @@ class OrderService:
                 name=request.currentUser.name,
                 email=request.currentUser.email,
                 orderAmount=request.subtotal,
+                transactionId=uuid4()
             )
             db.add(order_create)
             db.commit()

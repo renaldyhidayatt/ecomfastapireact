@@ -6,15 +6,6 @@ from datetime import datetime
 from .reviewmodels import ReviewModel
 
 
-{
-    "name": "ZEBRONICS Zeb-Yoga 101 Bluetooth Headset  (Red, In the Ear)",
-    "image": "https://rukminim1.flixcart.com/image/416/416/khp664w0-0/headphone/p/d/k/zeb-yoga-101-zebronics-original-imafxnkdwzt4gzhg.jpeg?q=70",
-    "category": "electronics",
-    "description": "kentang",
-    "price": 3000,
-    "countInStock": 4,
-    "rating": 3
-}
 
 
 class ProductModel(Base):
