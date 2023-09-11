@@ -5,14 +5,29 @@ export const getAllProducts = createAsyncThunk(
   'product/getAllProducts',
   async (_, { rejectWithValue }) => {
     try {
-      const response = await axios.get('/api/product');
+      const response = await axios.get('/api/product/recommendation');
       console.log(response.data);
-      return response.data;
+      const { recommended_products, accuracy } = response.data;
+      return { recommended_products, accuracy };
     } catch (error) {
       return rejectWithValue(error.response.data);
     }
   }
 );
+
+
+// export const getRecommendationProduct = createAsyncThunk(
+//   'product/getAllProducts',
+//   async (_, { rejectWithValue }) => {
+//     try {
+//       const response = await axios.get('/api/product/recommendation');
+//       // console.log(response.data);
+//       return response.data;
+//     } catch (error) {
+//       return rejectWithValue(error.response.data);
+//     }
+//   }
+// );
 
 export const filterProducts = createAsyncThunk(
   'product/filterProducts',
@@ -141,7 +156,7 @@ const productSlice = createSlice({
   initialState: {
     products: [],
     product: {},
-
+    accuracy: null,
     loading: false,
     error: null,
   },
@@ -154,7 +169,8 @@ const productSlice = createSlice({
       })
       .addCase(getAllProducts.fulfilled, (state, action) => {
         state.loading = false;
-        state.products = action.payload;
+        state.products = action.payload.recommended_products;
+        state.accuracy = action.payload.accuracy;
       })
       .addCase(getAllProducts.rejected, (state, action) => {
         state.loading = false;

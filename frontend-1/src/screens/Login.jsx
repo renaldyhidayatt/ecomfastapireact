@@ -22,11 +22,14 @@ export default function LoginScreen() {
     formData.append('password', password);
 
     dispatch(loginUser(formData));
+
+    navigate('/')
   };
 
   useEffect(() => {
     if (currentUser && currentUser.jwtToken) {
       navigate('/');
+      
     }
   }, [navigate]);
   return (

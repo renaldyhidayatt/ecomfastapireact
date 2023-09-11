@@ -77,6 +77,8 @@ export default function Review({ product }) {
             />
             <p>{review.comment}</p>
             <p>By: {review.name}</p>
+            <p>Sentiment: {review.sentiment === 'POSITIVE' ? 'Positive' : 'Negative'}</p>
+            <p>Sentiment Score: {review.sentiment_score}</p>
             <hr />
           </div>
         ))

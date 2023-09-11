@@ -15,6 +15,13 @@ python-multipart = "*"
 passlib = "*"
 stripe = "*"
 python-dotenv = "*"
+transformers = "*"
+tensorflow-cpu = "*"
+nltk = "*"
+textblob = "*"
+scikit-learn = "*"
+pandas = "*"
+numpy = "*"
 
 [dev-packages]
 
